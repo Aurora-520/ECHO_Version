@@ -65,6 +65,24 @@
 /root/models/my_model/model_271670.mud
 ```
 
-在 `E:\version`、`E:\电赛相关资料` 和 `E:\电赛开源` 中未找到上述模型、其他 `.mud`
-权重、对应标签、训练集或训练说明。状态：缺失。设备连接后只读检查 MaixCAM 的 `/root/models`
-和 `/maixapp`，未找到前不得补写类别映射。
+在 `E:\version`、`E:\电赛相关资料` 和 `E:\电赛开源` 中未找到上述模型、对应标签、训练集或
+训练说明。2026-07-15 又只读检查实机 `/root/models`、`/root/models/my_model`、`/maixapp`、
+`/mnt` 和 `/opt`，仍未找到 `model_262872.mud` 或 `model_271670.mud`。
+
+设备另有 `model_282919.mud`/`.cvimodel`，其 MUD 明确列出 10 类动物标签，与旧比赛模型的关系
+未获证明，不得替代缺失模型。
+
+## 6. MaixCAM Pro 官方资料与实机
+
+官方来源：
+
+- `https://wiki.sipeed.com/hardware/en/maixcam/maixcam_pro.html`
+- `https://github.com/sipeed/sipeed_wiki/blob/main/docs/hardware/en/maixcam/maixcam_pro.md`
+- `https://wiki.sipeed.com/maixpy/doc/en/README_MaixCAM.html`
+- `https://github.com/sipeed/MaixPy/blob/main/docs/doc/en/README_MaixCAM.md`
+- `https://github.com/sipeed/sipeed_wiki/blob/main/docs/hardware/en/maixcam/os.md`
+
+官方资料确认 MaixCAM Pro 板载六轴 IMU、USB NCM/RNDIS 双网卡、默认 SSH 账户和系统镜像命名。
+实机只读来源包括 `/boot/ver`、`/boot/board`、`/mnt/data/sensor_cfg.ini`、Python dist-info、
+`/maixapp`、`/root/models`、`/proc` 和 `/sys`。脱敏快照见
+`docs/evidence/2026-07-15_maixcam_discovery.json`。

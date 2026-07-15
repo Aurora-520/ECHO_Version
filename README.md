@@ -13,10 +13,10 @@ MSPM0G3507 发布结构化结果，电机、底盘和云台的最终输出始终
 
 ## 当前状态
 
-- 当前阶段：V0 工具链与可运行基线已完成纯软件验收。
+- 当前阶段：V1 进行中；MaixCAM Pro 首次 USB/SSH 只读发现已完成。
 - 已完成：只读资料调查、工程规则、核心数据类型、文件源、配置、离线回放、协议参考实现、
   平台适配边界和设备工具占位。
-- 未执行：MaixCAM 部署、树莓派相机测试、UART 实测和整机联调。
+- 未执行：MaixCAM 实时抓图/部署、IMU 实时读取、树莓派相机、UART 和整机联调。
 
 权威状态见 `docs/PROJECT_STATUS.md`。重开任务必须从 `AGENTS.md`、
 `docs/CURRENT_HANDOFF.md` 和 `docs/DOCUMENTATION_SYSTEM.md` 开始，并读取相关调试、学习和

@@ -19,12 +19,14 @@
 | latest-frame 槽 | `LatestValueSlot` | host-validated | 容量 1，记录覆盖和 high-water |
 | no-op Pipeline | `NoopPipeline` | host-validated | 仅验证数据流，始终 valid=false |
 | 协议帧/CRC/流解析 | `echo_vision.protocol` | host-validated | UART 尚未实测 |
+| Windows MaixCAM 发现 | `tools/discover_devices.ps1` | experimental | 实机发现通过，仍需更多电脑/驱动回归 |
 | 树莓派 OpenCV 相机 | `OpenCvCameraSource` | experimental | 当前主机无 OpenCV，未接相机 |
 | MaixCAM 相机 | `MaixCamCameraSource` | deferred | 等待真实固件/API 发现 |
 | 圆/矩形/光斑/黑线算法 | 待建立 | deferred | V2 逐模块实现和评测 |
 
-详细快速复用说明见 `docs/capabilities/V0_RUNTIME_FOUNDATION.md`。任何状态升级必须同步修改本表、
-对应能力文档、测试证据和当前 Phase。
+详细快速复用说明见 `docs/capabilities/V0_RUNTIME_FOUNDATION.md` 和
+`docs/capabilities/V1_DEVICE_DISCOVERY.md`。任何状态升级必须同步修改本表、对应能力文档、测试
+证据和当前 Phase。
 
 每项能力还必须记录 `docs/ROBUSTNESS.md` 定义的 R0-R4 等级。当前 V0 运行底座不做检测，
 鲁棒性等级为 R1（仅数据流和故障报告的宿主机验证），不能外推为目标识别鲁棒性。

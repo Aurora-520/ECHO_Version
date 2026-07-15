@@ -7,7 +7,7 @@
 - 唯一正式视觉工程：`E:\ECHO_Version`
 - 当前分支：`main`
 - V0 基线提交：`71d827a`
-- 当前阶段：V0 工具链与可运行基线已完成纯软件验收
+- 当前阶段：V1 设备、采集、曝光、时间戳和录像，进行中
 - 阶段标签：`vision-v0-baseline`
 - 远端：`origin` -> `https://github.com/Aurora-520/ECHO_Version.git`
 - 分支跟踪：`main` -> `origin/main`
@@ -29,13 +29,15 @@
 
 ## 3. 已知硬件
 
-- MaixCAM Pro：设备在手；系统/固件版本、存储和接口尚未读取；不假设内置陀螺仪。
+- MaixCAM Pro：USB NCM/RNDIS 和 SSH 只读发现完成；MaixPy 4.12.5、GC4653、板载六轴 IMU、
+  存储/内存/温度和服务端口已记录；实时采集尚未执行。
 - 树莓派 4B：系统版本和软件环境待确认。
 - 独立相机：型号、传感器、镜头、接口和安装方式待确认。
 - MSPM0G3507：正式电控主控，视觉使用独立 UART 与其通信。
 - USB-TTL：型号待确认；只允许 3.3 V TTL，必须可靠共地。
 
-当前未连接或未自动识别任何视觉硬件。本文件不得把“设备在手”写成“硬件测试通过”。
+当前 MaixCAM Pro 已连接。设备 Settings 应用正在使用相机/显示并初始化默认 UART 通信监听，
+不能并行启动第二个相机或 UART 所有者。
 
 ## 4. 当前实现状态
 
@@ -62,18 +64,21 @@ V0 第一版工程骨架已经实现：
 | 本机 Pillow 文件回放 | 通过 | 两张只读赛题截图，2 帧、0 failure |
 | 本机 OpenCV 回放 | 未执行 | 当前 bundled Python 无 OpenCV |
 | 目标识别鲁棒性 | 未执行 | 当前没有正式矩形/圆/光斑算法和鲁棒性数据集 |
-| MaixCAM 部署 | 未执行 | 未连接设备 |
+| MaixCAM USB/SSH 发现 | 通过 | NCM/RNDIS 双网卡、SSH、系统、资源、相机配置和模型路径只读发现 |
+| MaixCAM 实时相机采集 | 未执行 | 只读取配置和最近日志，尚未抓取新帧 |
+| MaixCAM IMU 实时读取 | 未执行 | 官方说明、应用和校准文件存在，未调用传感器 |
+| MaixCAM 部署 | 未执行 | 已连接但未上传或启动正式工程应用 |
 | 树莓派相机实测 | 未执行 | 系统和相机未知 |
 | UART 实测 | 未执行 | 未接线 |
-| 整机联调 | 未执行 | 不属于 V0 |
+| 整机联调 | 未执行 | 不属于当前 V1.0 只读发现 |
 
 ## 6. 下一步
 
-1. 用户连接 MaixCAM Pro 后，先只读发现系统、USB 网卡、IP、存储、相机和串口，不刷系统。
-2. 更新硬件清单并确认 MaixPy/MaixCDK API，再实现 MaixCAM CameraSource。
-3. 确认独立相机型号/接口和树莓派系统，再做同场景采集准备。
-4. 建立第一批固定图片数据集，开始矩形、圆和中心点的纯算法实现与评测。
-5. 同场景采集 nominal/boundary/adverse/negative/recovery 切片，冻结 test 集后再调参。
+1. 正常退出设备 Settings 应用或由 MaixVision 接管，释放相机和默认通信资源。
+2. 校正设备时间来源并记录前后状态，不刷系统。
+3. 基于 MaixPy 4.12.5 实现最小 CameraSource 和单帧 raw/status 抓取，不加载模型、不发送 UART。
+4. 确认曝光、增益、白平衡和实际帧率 API，保存第一批固定原图。
+5. 确认独立相机型号/接口和树莓派系统，再准备同场景 A/B 采集。
 
 开始以上任何任务前，必须先按 `AGENTS.md` 和 `docs/DOCUMENTATION_SYSTEM.md` 读取状态、交接、
 能力目录、相关调试日志和学习日志。
@@ -87,4 +92,13 @@ V0 第一版工程骨架已经实现：
 - CLI 回放结果：2 帧、0 failure；输出为 ignored
   `artifacts/v0-smoke/results.jsonl`。
 - 本次 no-op 回放只验证数据流，FPS/0 ms 延迟不代表真实算法性能。
-- `tools/discover_devices.ps1` 在当前环境未发现 USB 网卡或串口候选，不代表硬件不存在。
+- V0 当时未连接设备，`tools/discover_devices.ps1` 未发现候选；该历史结果不代表当前状态。
+
+## 8. V1.0 首次连接证据
+
+- Windows 主机：NCM `10.5.66.100`、RNDIS `10.5.67.100`；设备端分别为 `.1`。
+- 设备：`maixcam-0542`，镜像 `maixcam-pro-2026-01-24-maixpy-v4.12.5`。
+- GC4653 配置存在，最近运行日志为 1280x720@60fps；本轮没有实时抓图。
+- `/root/models/my_model` 只有 `model_282919`，旧 `model_262872`/`model_271670` 仍缺失。
+- 改进后的发现脚本在实机上输出双网卡、两个 `.1` 设备地址、SSH=true、COM4 和空错误列表。
+- 机器可读快照：`docs/evidence/2026-07-15_maixcam_discovery.json`。

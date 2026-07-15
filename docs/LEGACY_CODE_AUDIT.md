@@ -45,3 +45,16 @@
 
 `model_262872.mud` 和 `model_271670.mud` 仅在源码字符串中出现，资料目录中未找到模型、标签、
 训练数据或说明。不得根据旧 `class_id` 硬编码结果推断模型真实标签。
+
+## 6. 2026-07-15 设备端补充审计
+
+- 设备仍保留 `/maixapp/apps/a/main.py`，应用元数据为 `version5.0.0`。
+- 设备文件 SHA-256 为 `67fc4d9c88316d72b0c10a5e97f36cfa9822cf5d5c485745bd29ba31d026edf0`，
+  与 `E:\version` 中 8 个 Python 文件均不相同，属于设备端独立版本。
+- 该文件在导入阶段打开 448x448 相机、显示、`/dev/ttyS0`，并加载两个缺失模型，继续证明其
+  单文件和资源初始化结构不能直接继承。
+- `/maixapp/tmp/last_run.log` 保存了 `model_262872.mud not exists` 和 YOLOv5 初始化失败的真实
+  堆栈，说明旧应用目前无法启动，而不是“偶尔识别不好”。
+- 设备 `/root/models/my_model` 只有 `model_282919`，标签是 giraffe、lion、panda、hedgehog、
+  duck、dog、elephant、squirrel、rabbit、cat；没有证据表明它属于旧比赛任务。
+- 设备日志确认旧应用使用 GC4653 和 1280x720@60fps 中间件，但应用本身固定创建 448x448 图像。

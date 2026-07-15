@@ -38,7 +38,8 @@ Frame/Result -> recorder / debug HTTP / overlay / failure capture / metrics / lo
 - File：无硬件开发、回归和故障样本复现。
 - MaixCAM：使用设备确认后的 MaixPy/MaixCDK API；不得在未读取版本时猜 API。
 - Raspberry Pi：优先 OpenCV/V4L2 相机后端；系统和相机确定后冻结配置。
-- IMU：MaixCAM Pro 不假设内置陀螺仪；外接 IMU 作为独立可选端口，不进入图像算法。
+- IMU：MaixCAM Pro 已确认板载六轴 IMU，但必须通过独立 `ImuSource` 接入；图像算法不得直接
+  打开或校准 IMU。外接 IMU 仍使用相同端口，不把平台细节泄漏到 Pipeline。
 
 ## 4. 能力沉淀顺序
 

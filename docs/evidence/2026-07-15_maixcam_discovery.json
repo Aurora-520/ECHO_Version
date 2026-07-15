@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "observed_at_host": "2026-07-15T23:23:17+08:00",
+  "scope": "first_connection_read_only_discovery",
+  "device": {
+    "hostname": "maixcam-0542",
+    "product": "MaixCAM-Pro",
+    "board_id": "maixcam_pro",
+    "usb_network": [
+      {
+        "host_adapter": "UsbNcm Host Device",
+        "host_ipv4": "10.5.66.100/24",
+        "device_ipv4": "10.5.66.1",
+        "ssh_22_open": true
+      },
+      {
+        "host_adapter": "Remote NDIS based Internet Sharing Device",
+        "host_ipv4": "10.5.67.100/24",
+        "device_ipv4": "10.5.67.1",
+        "ssh_22_open": true
+      }
+    ],
+    "firmware_image": "maixcam-pro-2026-01-24-maixpy-v4.12.5",
+    "kernel": "Linux 5.10.4-tag- #14 PREEMPT 2026-01-22 riscv64",
+    "os": "Buildroot 2023.11.2",
+    "python": "3.11.6",
+    "maixpy": "4.12.5",
+    "maixcam_lib": "1.24.0",
+    "cpu_linux_cores": 1,
+    "memory_linux_total_kib": 130868,
+    "swap_kib": 0,
+    "root_filesystem": {
+      "size": "57.6G",
+      "used": "2.0G",
+      "available": "53.3G"
+    },
+    "temperature_millicelsius": 55283,
+    "device_clock_observed": "2026-06-18T22:47:41+00:00",
+    "clock_status": "stale_relative_to_host",
+    "camera": {
+      "sensor": "GCORE_GC4653_MIPI_4M_30FPS_10BIT",
+      "runtime_log_mode": "1280x720@60fps 10bit linear",
+      "bus_id": 4,
+      "i2c_address_decimal": 29,
+      "live_capture_tested": false
+    },
+    "imu": {
+      "official_hardware_documentation": "onboard_six_axis",
+      "device_app_present": "/maixapp/apps/imu_ahrs",
+      "calibration_present": "/maixapp/share/misc/imu_calibration.json",
+      "live_read_tested": false
+    },
+    "services": {
+      "ssh": 22,
+      "ftp": 21,
+      "maixvision": 7899
+    },
+    "uart": {
+      "default_port": "/dev/ttyS0",
+      "pins": "A16_TX/A17_RX",
+      "baud_in_legacy_app": 115200,
+      "host_serial_candidate": {
+        "port": "COM4",
+        "pnp_id": "USB\\VID_0D28&PID_0204&MI_01",
+        "confirmed_as_maix_uart": false
+      }
+    }
+  },
+  "legacy_models": {
+    "model_262872.mud": "missing_in_searched_device_paths",
+    "model_271670.mud": "missing_in_searched_device_paths",
+    "model_282919": {
+      "mud_path": "/root/models/my_model/model_282919.mud",
+      "cvimodel_path": "/root/models/my_model/model_282919.cvimodel",
+      "mud_sha256": "c1d73bfd6d3c0fab672b4ead9c13d9a1cd916a27630cd4c8646ae4eda3ffa615",
+      "cvimodel_sha256": "12cdb64b52173b3cc3dc7ab0843737c977da0f83e7081e051f88a849fe847cb6",
+      "model_type": "yolov5",
+      "labels": [
+        "giraffe",
+        "lion",
+        "panda",
+        "hedgehog",
+        "duck",
+        "dog",
+        "elephant",
+        "squirrel",
+        "rabbit",
+        "cat"
+      ],
+      "relationship_to_legacy_competition_models": "unproven"
+    }
+  },
+  "important_observations": [
+    "Importing maix registers the default communication listener and opens UART0.",
+    "The currently running settings app owns camera/display resources and also initializes the default communication listener.",
+    "No V4L /dev/video node was observed; Maix middleware uses CVI device nodes.",
+    "Full target-recognition, live camera, IMU, UART and vehicle tests were not executed."
+  ],
+  "redacted": [
+    "wifi_psk",
+    "wifi_ssid_from_formal_evidence"
+  ]
+}

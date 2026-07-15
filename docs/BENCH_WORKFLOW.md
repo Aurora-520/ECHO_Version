@@ -17,6 +17,10 @@
 4. 只读检查 `/root/models`、`/maixapp` 和旧模型路径，不移动或删除文件。
 5. 更新 `docs/HARDWARE.md` 和 `PROJECT_STATUS.md`。
 
+Windows 11 可能同时出现 NCM 与 RNDIS；两条都正常时只选一条作为自动化主链路。官方 DHCP
+规则为电脑地址末位通常是 `.100`，设备地址末位是 `.1`。版本探测优先读取 `/boot/ver` 和
+Python dist-info，不使用顶层 `import maix`，因为 MaixPy 4.12.5 会自动打开 UART0。
+
 不得在发现阶段刷系统或写未知 USB 磁盘。
 
 ## 3. 普通应用部署

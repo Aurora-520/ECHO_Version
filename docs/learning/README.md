@@ -29,3 +29,4 @@
 | `VISION_LEARNING_PATH.md` | 从图像基础到系统联调的长期路线 |
 | `2026-07-15_V0_FOUNDATIONS.md` | Frame、回放、valid、坐标系、CRC 和 latest-frame |
 | `2026-07-15_ROBUSTNESS_FOUNDATIONS.md` | 为什么光照会改变图像、怎样做安全退化和分场景测试 |
+| `2026-07-15_MAIXCAM_FIRST_CONNECTION.md` | USB 双网卡、SSH、设备资源和首次连接排障 |
