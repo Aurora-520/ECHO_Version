@@ -4,10 +4,10 @@
 
 ```text
 CameraSource (single owner)
-  -> Frame + monotonic timestamp
+  -> Frame + monotonic timestamp + camera/scene metadata
   -> bounded latest-frame channel
   -> Mission-selected Pipeline
-  -> pure algorithms / estimation
+  -> image-quality gate + pure algorithms / estimation
   -> VisionResult immutable snapshot
   -> ResultSink / UART service (single owner)
   -> MSPM0G3507 perception receiver
@@ -29,6 +29,9 @@ Frame/Result -> recorder / debug HTTP / overlay / failure capture / metrics / lo
 - `Frame`：图像、帧序号、采集单调时间、来源和不可变元数据。
 - `VisionResult`：模式、valid、类别、坐标系、坐标、置信度、故障和时效。
 - `HealthSnapshot`：FPS、延迟、drop、资源、温度、状态和首要故障。
+
+相机参数、画面亮度/饱和/清晰度等质量信息属于可观测元数据，不由算法直接回写相机。质量门禁
+不通过时 Pipeline 发布无效或降级结果，由 MCU 执行安全策略。详细要求见 `docs/ROBUSTNESS.md`。
 
 ## 3. 平台适配
 

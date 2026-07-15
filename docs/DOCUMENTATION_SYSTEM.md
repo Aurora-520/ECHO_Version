@@ -24,11 +24,12 @@
 2. `docs/PROJECT_STATUS.md`
 3. `docs/CURRENT_HANDOFF.md`
 4. 本文件
-5. `docs/CURRENT_WORKFLOW.md` 和当前 Phase 文档
-6. `docs/CAPABILITY_CATALOG.md`
-7. `docs/debuglogs/README.md` 和当前阶段/模块相关的最近调试日志
-8. `docs/learning/README.md` 和本任务相关的学习日志
-9. Git 状态和本次任务直接相关源码
+5. `docs/ROBUSTNESS.md`
+6. `docs/CURRENT_WORKFLOW.md` 和当前 Phase 文档
+7. `docs/CAPABILITY_CATALOG.md`
+8. `docs/debuglogs/README.md` 和当前阶段/模块相关的最近调试日志
+9. `docs/learning/README.md` 和本任务相关的学习日志
+10. Git 状态和本次任务直接相关源码
 
 不要求每次加载所有历史日志，但必须读取索引，并根据索引读取当前模块相关记录。不能因为
 聊天中“记得大概”而跳过。
@@ -55,6 +56,7 @@
 - 无目标、低置信度、过期、异常和资源不足时的行为。
 - 最小使用示例和接入 Pipeline/Mission 的步骤。
 - 单元测试、固定数据集回放和适用平台的真实验证层级。
+- nominal、boundary、adverse、negative、recovery 鲁棒性切片和最差切片证据。
 - 性能基线和资源预算；没有实测时明确写未知。
 - 已知限制、不能使用的场景和安全回退方法。
 - 来源 commit/tag，以及配置、模型或标定哈希。

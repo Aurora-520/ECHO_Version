@@ -2,6 +2,9 @@
 
 状态：host-validated
 
+鲁棒性等级：R1，仅覆盖文件数据流、错误报告和 src-layout 工具链；不代表任何检测算法在光照
+变化下通过。
+
 基线：`71d827a` / `vision-v0-baseline`
 
 ## 1. 用途
@@ -82,3 +85,4 @@ process(frame: Frame) -> VisionResult
 - 当前实时相机适配器没有完成设备验收。
 - 协议仅有 Python 参考实现，MCU golden vector 和 UART 实测待 V3。
 - 出现设备问题时退回 FileImageSource，先证明算法和配置是否正常。
+- 当前没有 nominal/adverse 目标检测数据，因此不得从本能力推导矩形、圆或光斑识别鲁棒性。

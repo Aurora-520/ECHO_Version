@@ -1,2 +1,2 @@
-dataset_id,version,root_path,manifest_sha256,camera_id,scene,labels,status
-example,0,PATH_OUTSIDE_GIT,,unknown,unknown,,missing
+dataset_id,version,root_path,manifest_sha256,split,camera_id,lens_id,resolution,fps,exposure_us,gain_db,white_balance,robustness_slice,scenario_tags,labels,status
+example,0,PATH_OUTSIDE_GIT,,dev,unknown,unknown,unknown,unknown,unknown,unknown,unknown,nominal,unknown,,missing

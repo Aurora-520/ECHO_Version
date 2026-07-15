@@ -49,3 +49,4 @@ YYYY-MM-DD_<phase-or-module>_<topic>.md
 | --- | --- |
 | `2026-07-15_v0_baseline.md` | V0 环境、配置、计时、错误报告和序列化问题 |
 | `2026-07-15_documentation_governance.md` | worklog、debuglog、learning 和 capability 分工及门禁 |
+| `2026-07-15_robustness_governance.md` | 赛场扰动、分层降级、数据切片和鲁棒性验收门禁 |

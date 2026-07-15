@@ -9,6 +9,7 @@
 
 1. `VISION_LEARNING_PATH.md`
 2. `2026-07-15_V0_FOUNDATIONS.md`
+3. `2026-07-15_ROBUSTNESS_FOUNDATIONS.md`
 
 以后每增加一种重要能力，应在此处增加索引，例如曝光、轮廓、单应性、跟踪、模型和 UART。
 
@@ -27,3 +28,4 @@
 | --- | --- |
 | `VISION_LEARNING_PATH.md` | 从图像基础到系统联调的长期路线 |
 | `2026-07-15_V0_FOUNDATIONS.md` | Frame、回放、valid、坐标系、CRC 和 latest-frame |
+| `2026-07-15_ROBUSTNESS_FOUNDATIONS.md` | 为什么光照会改变图像、怎样做安全退化和分场景测试 |
