@@ -47,9 +47,13 @@
 - 实现 JSON 配置、Pillow/NumPy 文件源、容量一 latest-value 槽、no-op Pipeline 和 JSONL 回放。
 - 实现协议 v1 帧、CRC-16/CCITT-FALSE、增量流重同步和 RESULT payload。
 - 建立 MaixCAM deferred 适配边界、树莓派 OpenCV 延迟导入适配器和设备工具占位。
+- 建立调试复盘、初学者学习日志、能力目录和安全复用说明，并纳入后续阶段门禁。
 - Python 3.12.13 下标准库单元测试 14/14 通过。
 - 5 个 JSON/schema 通过解析，26 个包模块通过导入。
 - 两张往年赛题截图完成 CLI 回放：2 帧、0 failure。
 - 当前环境没有 OpenCV/pytest/pyserial；MaixCAM、树莓派相机、UART 和整机均未测试。
 
 V0 的 no-op Pipeline 不做目标检测，输出 `valid=false` 是设计行为，不是算法能力证明。
+
+注：文档传承门禁是在 `vision-v0-baseline` 标签之后补强的治理规则，不改变该标签对应的代码
+验证结论，也不把未执行硬件测试升级为通过。

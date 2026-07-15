@@ -6,8 +6,11 @@
 
 1. 确认当前目录为 `E:\ECHO_Version`，不要使用 `E:\ECHO-Vision`。
 2. 读取 `AGENTS.md` 和 `docs/PROJECT_STATUS.md`。
-3. 读取本文件、`docs/CURRENT_WORKFLOW.md` 和 `docs/phases/V0_BASELINE.md`。
-4. 执行：
+3. 读取本文件和 `docs/DOCUMENTATION_SYSTEM.md`。
+4. 读取 `docs/CURRENT_WORKFLOW.md` 和当前阶段文档 `docs/phases/V0_BASELINE.md`。
+5. 读取 `docs/CAPABILITY_CATALOG.md`、`docs/debuglogs/README.md` 和
+   `docs/learning/README.md`，再读取本任务相关条目。
+6. 执行：
 
 ```powershell
 git status --short --branch
@@ -15,7 +18,7 @@ git diff
 git diff --cached
 ```
 
-5. 保留用户已有修改，不自动暂存、提交或 push。
+7. 保留用户已有修改，不自动暂存、提交或 push。
 
 ## 当前断点
 
@@ -25,6 +28,8 @@ git diff --cached
 - 本机 Codex Python 为 3.12.13，已有 NumPy/Pillow，没有 OpenCV、pytest、PyYAML 或 pyserial。
 - 标准库 `unittest` 为 14/14 通过；Pillow 文件回放 2 帧、0 failure。
 - OpenCV、MaixCAM、树莓派相机、UART 和整机路径均未执行。
+- 已建立 worklog、debuglog、learning 和 capability 分工；新任务必须按上述顺序读取索引和
+  相关记录。
 
 ## 已冻结决定
 

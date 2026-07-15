@@ -13,8 +13,9 @@ MSPM0G3507 发布结构化结果，电机、底盘和云台的最终输出始终
   平台适配边界和设备工具占位。
 - 未执行：MaixCAM 部署、树莓派相机测试、UART 实测和整机联调。
 
-权威状态见 `docs/PROJECT_STATUS.md`，重开任务先读 `AGENTS.md` 和
-`docs/CURRENT_HANDOFF.md`。
+权威状态见 `docs/PROJECT_STATUS.md`。重开任务必须从 `AGENTS.md`、
+`docs/CURRENT_HANDOFF.md` 和 `docs/DOCUMENTATION_SYSTEM.md` 开始，并读取相关调试、学习和
+能力记录。
 
 ## 快速开始
 
@@ -41,7 +42,7 @@ calibrations/     相机/平面/云台标定参数与哈希
 protocol/         视觉-MCU 协议说明、schema 与测试向量
 tools/            回放、设备发现、部署和抓取工具
 tests/            单元测试与离线测试入口
-docs/             状态、交接、架构、硬件、阶段和 worklog
+docs/             状态、交接、架构、阶段、调试、学习、能力复用和 worklog
 models/           模型元数据；权重默认忽略
 datasets/         数据集索引；原始数据默认忽略
 recordings/       录像索引；视频默认忽略
@@ -51,3 +52,6 @@ recordings/       录像索引；视频默认忽略
 
 `E:\ECHO`、`E:\电赛相关资料`、`E:\电赛开源` 和 `E:\version` 只读。系统镜像烧录与普通
 应用部署严格分离，未经明确批准不得写镜像或操作未知 USB 磁盘。
+
+已经调好的模块从 `docs/CAPABILITY_CATALOG.md` 进入；未满足接口、所有权、回归、性能和限制
+门禁的模块，不得标记为比赛可直接复用。
