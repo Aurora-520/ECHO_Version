@@ -1,0 +1,22 @@
+{
+  "source": {
+    "kind": "file",
+    "path": "datasets/demo",
+    "patterns": ["*.png", "*.jpg", "*.jpeg", "*.bmp", "*.npy"],
+    "loop": false,
+    "pixel_format": "rgb8"
+  },
+  "replay": {
+    "max_frames": 0,
+    "output_jsonl": null
+  },
+  "protocol": {
+    "version": 1,
+    "max_payload_bytes": 512
+  },
+  "debug": {
+    "enabled": false,
+    "host": "127.0.0.1",
+    "port": 8765
+  }
+}

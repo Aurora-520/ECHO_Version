@@ -1,0 +1,28 @@
+{
+  "name": "echo_vision_mcu",
+  "version": 1,
+  "byte_order": "little",
+  "sof_hex": "A55A",
+  "crc": "CRC-16/CCITT-FALSE",
+  "max_payload_bytes": 512,
+  "header_fields": [
+    ["version", "u8"],
+    ["message_type", "u8"],
+    ["payload_len", "u16"],
+    ["sequence", "u32"],
+    ["timestamp_ms", "u32"],
+    ["mode", "u8"],
+    ["header_flags", "u16"]
+  ],
+  "message_types": {
+    "SET_MODE": 1,
+    "START": 2,
+    "STOP": 3,
+    "SET_PARAM": 4,
+    "PING": 5,
+    "RESULT_SNAPSHOT": 129,
+    "HEALTH": 130,
+    "ACK": 131,
+    "PONG": 132
+  }
+}

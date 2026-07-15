@@ -1,0 +1,2 @@
+recording_id,version,path,sha256,width,height,fps,duration_s,config_sha256,notes
+example,0,PATH_OUTSIDE_GIT,,0,0,0,0,,missing

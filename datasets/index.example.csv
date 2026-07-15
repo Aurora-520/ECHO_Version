@@ -1,0 +1,2 @@
+dataset_id,version,root_path,manifest_sha256,camera_id,scene,labels,status
+example,0,PATH_OUTSIDE_GIT,,unknown,unknown,,missing

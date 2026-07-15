@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "camera_id": "unknown",
+  "resolution": [0, 0],
+  "intrinsics": null,
+  "distortion": null,
+  "mean_reprojection_error_px": null,
+  "source_manifest_sha256": null,
+  "status": "missing"
+}

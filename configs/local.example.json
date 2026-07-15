@@ -1,0 +1,8 @@
+{
+  "source": {
+    "path": "D:/vision-data/session-001"
+  },
+  "replay": {
+    "output_jsonl": "artifacts/session-001/results.jsonl"
+  }
+}

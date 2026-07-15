@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+
+# Local configuration and credentials
+configs/local.json
+configs/*.local.json
+.env
+*.key
+*.pem
+
+# Runtime output
+logs/
+artifacts/
+captures/
+status.json
+overlay.jpg
+raw.jpg
+
+# Large assets: keep only documentation and metadata indexes
+datasets/*
+!datasets/README.md
+!datasets/index.example.csv
+recordings/*
+!recordings/README.md
+!recordings/index.example.csv
+models/*
+!models/README.md
+!models/manifest.example.json
+calibrations/raw/
+
+# Editors and OS
+.vscode/settings.json
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
