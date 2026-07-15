@@ -9,8 +9,9 @@
 - V0 基线提交：`71d827a`
 - 当前阶段：V0 工具链与可运行基线已完成纯软件验收
 - 阶段标签：`vision-v0-baseline`
-- 远端：未配置
-- push：未执行
+- 远端：`origin` -> `https://github.com/Aurora-520/ECHO_Version.git`
+- 分支跟踪：`main` -> `origin/main`
+- 首次 push：2026-07-15 已完成；当前同步状态以 `git status --short --branch` 为准
 
 `E:\ECHO-Vision` 是旧笔误，不得使用。所有长期事实必须写入本仓库文档。
 

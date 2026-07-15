@@ -25,7 +25,8 @@ git diff --cached
 
 - 只读资料调查和架构判断已经完成，不需要从头重做。
 - V0 第一版工程骨架和纯软件验收已经完成。
-- Git 分支为 `main`，V0 基线使用标签 `vision-v0-baseline`，没有远端和 push。
+- Git 分支为 `main`，V0 基线使用标签 `vision-v0-baseline`；`origin` 为
+  `https://github.com/Aurora-520/ECHO_Version.git`，首次 push 已完成。
 - 本机 Codex Python 为 3.12.13，已有 NumPy/Pillow，没有 OpenCV、pytest、PyYAML 或 pyserial。
 - 标准库 `unittest` 为 14/14 通过；Pillow 文件回放 2 帧、0 failure。
 - OpenCV、MaixCAM、树莓派相机、UART 和整机路径均未执行。
